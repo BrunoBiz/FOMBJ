@@ -7,19 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace FOMBJ
 {
     public partial class FORMPRINCIPAL : Form
     {
+        public DataSet mDataSet;
+        public MySqlDataAdapter mAdapter;
+        public MySqlConnection mConn;
+
         public FORMPRINCIPAL()
         {
             InitializeComponent();
+
+            Conexao TesteConexaoAbertura = new Conexao();
+
+            if (!TesteConexaoAbertura.CriaConexao()) {
+                MessageBox.Show("Falha de conexão com o banco de dados");
+            }
+
             SidePanel.Height = BtnPrincipal.Height;
             SidePanel.Top = BtnPrincipal.Top;
             F_PRINCIPAL.BringToFront();
         }
-
+        
         private void BtnPrincipal_Click(object sender, EventArgs e)
         {
             SidePanel.Height = BtnPrincipal.Height;

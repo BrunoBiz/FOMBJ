@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace FOMBJ
 {
     public partial class F_CADASTRO : UserControl
     {
+
+        private DataSet mDataSet;
+        private MySqlDataAdapter mAdapter;
+        public MySqlConnection mConn;
+        public MySqlCommand cmdInsertMercadorias;
+
         public F_CADASTRO()
         {
             InitializeComponent();
@@ -45,8 +53,50 @@ namespace FOMBJ
 
         }
 
-        private void BtnConfirmar_Click(object sender, EventArgs e)
+        public Boolean SalvarMercadorias()
         {
+            Conexao GravarMercadorias = new Conexao();
+            if (GravarMercadorias.CriaConexao())
+            {
+                cmdInsertMercadorias = new MySqlCommand(
+                    "INSERT INTO CADASTRO_MERCADORIA  " +
+                    "	(                             " +
+                    "		CODIGO_INTERNO_ID,        " +
+                    "		ALTURA           ,        " +
+                    "		LARGURA          ,        " +
+                    "		COMPRIMENTO      ,        " +
+                    "		PESO             ,        " +
+                    "		CODIGO_BARRAS    ,        " +
+                    "		DATA_CHEGADA     ,        " +
+                    "		PREVIA_ENTREGA            " +
+                    "	)VALUES(                      " +
+                    "		1           ,             " +
+                    "		1           ,             " +
+                    "		1           ,             " +
+                    "		1           ,             " +
+                    "		1           ,             " +
+                    "		'ASD123ASD' ,             " +
+                    "		CURRENT_DATE,             " +
+                    "		CURRENT_DATE              " +
+                    "	)                             ");
+
+                Insert InsertMercadorias = new Insert(GravarMercadorias.mConn, cmdInsertMercadorias);
+
+                InsertMercadorias.Executar();
+
+                GravarMercadorias.FecharConexao();
+            }
+            else
+            {
+                MessageBox.Show("Falha de conexão com o banco de dados!");
+            }
+
+            return true;
+        }
+
+        public void BtnConfirmar_Click(object sender, EventArgs e)
+        {
+            SalvarMercadorias();
             HabilitaDesabilitaComponentes(false);
             LimparCampos();
         }
