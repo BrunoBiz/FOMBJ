@@ -61,30 +61,27 @@ namespace FOMBJ
                 cmdInsertMercadorias = new MySqlCommand(
                     "INSERT INTO CADASTRO_MERCADORIA  " +
                     "	(                             " +
-                    "		CODIGO_INTERNO_ID,        " +
                     "		ALTURA           ,        " +
                     "		LARGURA          ,        " +
                     "		COMPRIMENTO      ,        " +
                     "		PESO             ,        " +
                     "		CODIGO_BARRAS    ,        " +
-                    "		DATA_CHEGADA     ,        " +
                     "		PREVIA_ENTREGA            " +
                     "	)VALUES(                      " +
-                    "		1           ,             " +
-                    "		1           ,             " +
-                    "		1           ,             " +
-                    "		1           ,             " +
-                    "		1           ,             " +
-                    "		'ASD123ASD' ,             " +
-                    "		CURRENT_DATE,             " +
-                    "		CURRENT_DATE              " +
+                            this.TxtAltura.Text      + " ," +
+                            this.TxtLargura.Text     + " ," +
+                            this.TxtComprimento.Text + " ," +
+                            this.TxtPeso.Text        + " ," +
+                    "'" +  this.TxtCodBarras.Text   + "'," +
+                    "'" +  this.TxtDtPrevia.Text.Substring(6, 4) + "-" + this.TxtDtPrevia.Text.Substring(3, 2) + "-" + this.TxtDtPrevia.Text.Substring(0, 2) + "'" + // GAMBIARRA - Transforma a data em um formato válido AAAA-MM-DD
                     "	)                             ");
 
                 Insert InsertMercadorias = new Insert(GravarMercadorias.mConn, cmdInsertMercadorias);
 
                 InsertMercadorias.Executar();
-
                 GravarMercadorias.FecharConexao();
+
+                MessageBox.Show("Mercadoria Gravada com Sucesso!");
             }
             else
             {

@@ -73,12 +73,11 @@ namespace FOMBJ
 
         public Boolean Executar()
         {
-            MessageBox.Show(mSqlExecConnExec.State.ToString());
             if (mSqlExecConnExec.State == ConnectionState.Open)
             {
                 cmdInsert.Connection = mSqlExecConnExec;
-                MessageBox.Show(cmdInsert.ExecuteNonQuery().ToString());
-                return true;
+                cmdInsert.ExecuteNonQuery();
+                return true; 
             }
             return false;
         }
