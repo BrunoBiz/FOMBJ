@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/FOMBJ/LinqToDB.Templates
+/FOMBJ/fombjDataSet.Designer.cs
+/FOMBJ/fombjDataSet.xsc
+/FOMBJ/fombjDataSet.xsd
+/FOMBJ/fombjDataSet.xss
+/FOMBJ/packages.config
