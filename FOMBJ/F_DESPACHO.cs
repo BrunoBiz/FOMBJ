@@ -49,7 +49,7 @@ namespace FOMBJ
         
         private void button3_Click(object sender, EventArgs e)
         {
-            ''
+
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -63,6 +63,11 @@ namespace FOMBJ
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtCodbarras_TextChanged(object sender, EventArgs e)
         {
 
         }
