@@ -30,6 +30,7 @@ namespace FOMBJ
             this.TxtCodBarras.Enabled   = Acao;
             this.TxtPeso.Enabled        = Acao;
             this.TxtDtPrevia.Enabled    = Acao;
+            this.TxtLocalizacao.Enabled = Acao;
             this.TxtAltura.Enabled      = Acao;
             this.TxtLargura.Enabled     = Acao;
             this.TxtComprimento.Enabled = Acao;
@@ -47,6 +48,7 @@ namespace FOMBJ
             this.TxtCodBarras.Text     = "";
             this.TxtPeso.Text          = "";
             this.TxtDtPrevia.Text      = "";
+            this.TxtLocalizacao.Text   = "";
             this.TxtAltura.Text        = "";
             this.TxtComprimento.Text   = "";
             this.TxtLargura.Text       = "";
@@ -66,15 +68,17 @@ namespace FOMBJ
                     "		COMPRIMENTO      ,        " +
                     "		PESO             ,        " +
                     "		CODIGO_BARRAS    ,        " +
+                    "       LOCALIZACAO      ,        " +
                     "		PREVIA_ENTREGA            " +
                     "	)VALUES(                      " +
                             this.TxtAltura.Text      + " ," +
                             this.TxtLargura.Text     + " ," +
                             this.TxtComprimento.Text + " ," +
                             this.TxtPeso.Text        + " ," +
-                    "'" +  this.TxtCodBarras.Text   + "'," +
-                    "'" +  this.TxtDtPrevia.Text.Substring(6, 4) + "-" + this.TxtDtPrevia.Text.Substring(3, 2) + "-" + this.TxtDtPrevia.Text.Substring(0, 2) + "'" + // GAMBIARRA - Transforma a data em um formato válido AAAA-MM-DD
-                    "	)                             ");
+                    "'" +   this.TxtCodBarras.Text   + "'," +
+                    "'" +   this.TxtLocalizacao.Text + "'," +
+                    "'" +   this.TxtDtPrevia.Text.Substring(6, 4) + "-" + this.TxtDtPrevia.Text.Substring(3, 2) + "-" + this.TxtDtPrevia.Text.Substring(0, 2) + "'" + // GAMBIARRA - Transforma a data em um formato válido AAAA-MM-DD
+                    "	)                             ");;
 
                 Insert InsertMercadorias = new Insert(GravarMercadorias.mConn, cmdInsertMercadorias);
 

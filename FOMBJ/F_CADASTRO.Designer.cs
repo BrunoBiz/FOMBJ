@@ -52,6 +52,8 @@
             this.TxtPeso = new System.Windows.Forms.MaskedTextBox();
             this.LblCodigoInterno = new System.Windows.Forms.Label();
             this.TxtCodigoInterno = new System.Windows.Forms.TextBox();
+            this.TxtLocalizacao = new System.Windows.Forms.TextBox();
+            this.LblLocalizacao = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.GrpDimensoes.SuspendLayout();
             this.SuspendLayout();
@@ -102,10 +104,10 @@
             this.GrpDimensoes.Controls.Add(this.LblCmLargura);
             this.GrpDimensoes.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GrpDimensoes.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.GrpDimensoes.Location = new System.Drawing.Point(11, 229);
+            this.GrpDimensoes.Location = new System.Drawing.Point(11, 281);
             this.GrpDimensoes.Name = "GrpDimensoes";
             this.GrpDimensoes.Size = new System.Drawing.Size(252, 147);
-            this.GrpDimensoes.TabIndex = 4;
+            this.GrpDimensoes.TabIndex = 6;
             this.GrpDimensoes.TabStop = false;
             this.GrpDimensoes.Text = "Dimensões";
             // 
@@ -252,7 +254,7 @@
             this.BtnCancelar.Location = new System.Drawing.Point(585, 414);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(101, 30);
-            this.BtnCancelar.TabIndex = 7;
+            this.BtnCancelar.TabIndex = 8;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.UseVisualStyleBackColor = true;
             this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -265,7 +267,7 @@
             this.BtnConfirmar.Location = new System.Drawing.Point(478, 414);
             this.BtnConfirmar.Name = "BtnConfirmar";
             this.BtnConfirmar.Size = new System.Drawing.Size(101, 30);
-            this.BtnConfirmar.TabIndex = 6;
+            this.BtnConfirmar.TabIndex = 7;
             this.BtnConfirmar.Text = "Confirmar";
             this.BtnConfirmar.UseVisualStyleBackColor = true;
             this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
@@ -335,9 +337,32 @@
             this.TxtCodigoInterno.Size = new System.Drawing.Size(89, 28);
             this.TxtCodigoInterno.TabIndex = 2;
             // 
+            // TxtLocalizacao
+            // 
+            this.TxtLocalizacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.TxtLocalizacao.Enabled = false;
+            this.TxtLocalizacao.Font = new System.Drawing.Font("Consolas", 13F);
+            this.TxtLocalizacao.Location = new System.Drawing.Point(203, 229);
+            this.TxtLocalizacao.Name = "TxtLocalizacao";
+            this.TxtLocalizacao.Size = new System.Drawing.Size(478, 28);
+            this.TxtLocalizacao.TabIndex = 5;
+            // 
+            // LblLocalizacao
+            // 
+            this.LblLocalizacao.AutoSize = true;
+            this.LblLocalizacao.Font = new System.Drawing.Font("Consolas", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLocalizacao.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.LblLocalizacao.Location = new System.Drawing.Point(7, 232);
+            this.LblLocalizacao.Name = "LblLocalizacao";
+            this.LblLocalizacao.Size = new System.Drawing.Size(130, 22);
+            this.LblLocalizacao.TabIndex = 20;
+            this.LblLocalizacao.Text = "Localização:";
+            // 
             // F_CADASTRO
             // 
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.TxtLocalizacao);
+            this.Controls.Add(this.LblLocalizacao);
             this.Controls.Add(this.TxtCodigoInterno);
             this.Controls.Add(this.LblCodigoInterno);
             this.Controls.Add(this.TxtPeso);
@@ -391,5 +416,7 @@
         private System.Windows.Forms.MaskedTextBox TxtComprimento;
         private System.Windows.Forms.Label LblCodigoInterno;
         private System.Windows.Forms.TextBox TxtCodigoInterno;
+        private System.Windows.Forms.TextBox TxtLocalizacao;
+        private System.Windows.Forms.Label LblLocalizacao;
     }
 }

@@ -49,6 +49,7 @@ namespace FOMBJ
             this.TxtDtPreviaInicial = new System.Windows.Forms.MaskedTextBox();
             this.LblPrevia = new System.Windows.Forms.Label();
             this.BtnConfirmar = new System.Windows.Forms.Button();
+            this.ChkApenasAtrasados = new System.Windows.Forms.CheckBox();
             this.GrpDimensoes.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -173,6 +174,7 @@ namespace FOMBJ
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ChkApenasAtrasados);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.TxtDtCadastroFinal);
             this.groupBox1.Controls.Add(this.TxtDtCadastroInicial);
@@ -185,7 +187,7 @@ namespace FOMBJ
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Location = new System.Drawing.Point(10, 142);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(789, 93);
+            this.groupBox1.Size = new System.Drawing.Size(789, 124);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mercadorias";
@@ -286,6 +288,18 @@ namespace FOMBJ
             this.BtnConfirmar.UseVisualStyleBackColor = true;
             this.BtnConfirmar.Click += new System.EventHandler(this.BtnConfirmar_Click);
             // 
+            // ChkApenasAtrasados
+            // 
+            this.ChkApenasAtrasados.AutoSize = true;
+            this.ChkApenasAtrasados.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChkApenasAtrasados.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.ChkApenasAtrasados.Location = new System.Drawing.Point(6, 92);
+            this.ChkApenasAtrasados.Name = "ChkApenasAtrasados";
+            this.ChkApenasAtrasados.Size = new System.Drawing.Size(280, 23);
+            this.ChkApenasAtrasados.TabIndex = 34;
+            this.ChkApenasAtrasados.Text = "Apenas Mercadorias Atrasadas";
+            this.ChkApenasAtrasados.UseVisualStyleBackColor = true;
+            // 
             // F_RELATORIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,5 +345,6 @@ namespace FOMBJ
         private System.Windows.Forms.Label LblPrevia;
         private System.Windows.Forms.Button BtnConfirmar;
         private System.Windows.Forms.TextBox TxtPlaca;
+        private System.Windows.Forms.CheckBox ChkApenasAtrasados;
     }
 }
